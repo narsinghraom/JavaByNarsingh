@@ -1,0 +1,14 @@
+package com.ss4code.programs.logics;
+
+public class Factorial 
+{
+	
+	public int factorialValue(int number)
+	{
+		int factorialValue=1;
+		
+		
+		return factorialValue;
+	}
+
+}

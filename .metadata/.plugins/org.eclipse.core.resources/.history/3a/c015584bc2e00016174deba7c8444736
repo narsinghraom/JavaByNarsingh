@@ -1,0 +1,7 @@
+package com.ss4code.oops;
+
+public class Second extends First
+{
+	
+
+}

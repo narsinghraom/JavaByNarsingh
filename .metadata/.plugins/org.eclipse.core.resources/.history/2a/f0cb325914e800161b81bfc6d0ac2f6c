@@ -1,0 +1,19 @@
+package com.ss4code.log4j;
+
+import java.io.ObjectInputStream.GetField;
+
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+
+public class First 
+{
+	static Logger logger=Logger.getLogger(First.class);
+	public static void main(String[] args) 
+	{
+		logger.setLevel(Level.INFO);
+		
+		logger.info("this is main method");
+		
+	}
+
+}

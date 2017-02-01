@@ -1,0 +1,40 @@
+package com.ss4code.log4j;
+
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+
+public class First 
+{
+	static Logger logger=Logger.getLogger(First.class);
+	
+	public static void function()
+	{
+		logger.setLevel(Level.WARN);
+
+		logger.trace("Trace Message!");
+		logger.debug("Debug Message!");
+		logger.info("Info Message!");
+		logger.warn("Warn Message!");
+		logger.error("Error Message!");
+		logger.fatal("Fatal Message!");
+	}
+	
+	public static void main(String[] args) 
+	{
+		logger.setLevel(Level.INFO);
+		function();
+		
+		try
+		{
+			int i=1/1;
+			logger.info("this ia an value of i" +i);
+		}
+		catch(Exception e)
+		{
+			logger.error(e);
+			
+		}
+		
+	}
+
+}

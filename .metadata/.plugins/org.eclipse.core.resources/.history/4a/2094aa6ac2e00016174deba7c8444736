@@ -1,0 +1,13 @@
+package com.ss4code.oops;
+
+public class Second extends First implements Xyz
+{
+	
+	public static void main(String[] args) 
+	{
+		
+		
+	}
+	
+
+}

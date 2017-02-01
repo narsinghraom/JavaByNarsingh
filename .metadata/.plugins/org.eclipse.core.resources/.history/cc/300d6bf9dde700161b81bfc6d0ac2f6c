@@ -1,0 +1,47 @@
+package com.ss4code.programs.logics;
+
+public class RepeatedAlpha 
+{
+	public void calString()
+	{
+		String s1=new String("SSSDFRSSSD");
+		int size=s1.length();
+		char[] charstring=new char[size];
+		int count=0;
+		
+		for(int i=0;i<=size-1;i++)
+		{
+			charstring[i]=s1.charAt(i);
+		
+		}
+		for(int j=0;j<=size-1;j++)
+		{
+		char repeat=charstring[0];
+		for(int i=0;i<=size-1;i++)
+		{
+			
+			if(charstring[i]==repeat)
+			{
+				count++;
+				repeat=charstring[i];
+				
+			}
+			
+			
+		}
+		System.out.println(repeat + "" +count);
+		}
+		
+			
+		
+		
+	}
+
+	public static void main(String[] args) 
+	{
+		RepeatedAlpha ra=new RepeatedAlpha();
+		ra.calString();
+
+	}
+
+}

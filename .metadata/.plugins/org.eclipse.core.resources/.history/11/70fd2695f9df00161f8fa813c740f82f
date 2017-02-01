@@ -1,0 +1,20 @@
+package com.ss4code.oops;
+
+public class First 
+{
+	int a,b;
+	static float f1,f2;
+	First()
+	{
+		a=5; b=a+1;
+	}
+	
+	public int function(int a)
+	{
+		this.a=a+a;
+		b=this.a;
+		return a+this.b;
+		
+	}
+
+}

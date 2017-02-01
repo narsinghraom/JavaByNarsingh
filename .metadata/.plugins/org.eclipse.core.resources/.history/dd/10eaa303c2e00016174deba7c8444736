@@ -1,0 +1,9 @@
+package com.ss4code.oops;
+
+public interface Abc 
+{
+	int i=5;
+	public int function(int a);
+	
+
+}

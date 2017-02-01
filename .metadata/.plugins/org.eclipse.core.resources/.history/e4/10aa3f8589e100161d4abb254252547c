@@ -1,0 +1,20 @@
+package com.ss4code.oops;
+
+public class Third implements Xyz
+{
+
+	public int function(int a) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int function(int a, int b) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	public static void main(String[] args) {
+		Abc a1=new Third();
+	}
+	
+
+}

@@ -1,0 +1,26 @@
+package com.ss4code.oops;
+
+public class Second extends First implements Xyz
+{
+	public int function(int a)
+	{
+		this.a=a+a;
+		int i=this.i;
+		b=this.a;
+		return a+this.b;
+		
+	}
+	
+	public static void main(String[] args) 
+	{
+		First first=new First();
+		first.function(2);
+		first.function(2, 4);
+		
+		Abc abc=new Second();
+		abc.function(2);
+		
+	}
+	
+
+}

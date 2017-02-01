@@ -1,0 +1,16 @@
+package com.ss4code.programs.logics;
+
+public class Fibnocci 
+{
+	
+	public static void fibnocciSeries(int range)
+	{
+		
+	}
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}
