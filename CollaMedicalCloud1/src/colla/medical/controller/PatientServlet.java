@@ -1,6 +1,7 @@
 package colla.medical.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -59,14 +60,22 @@ public class PatientServlet extends HttpServlet {
 		 patientbean.setProblem(problem);
 		 patientbean.setContactNo(contact);
 		 patientbean.setAddress(address);
-		
-		 DaoImp dao=new DaoImp();
-		boolean status= dao.addPatient(patientbean);
-		
-				RequestDispatcher rd=request.getRequestDispatcher("AddPatient.jsp");
-				rd.forward(request, response);
-			
-				
+		 RequestDispatcher forwardAction = request.getRequestDispatcher("ReceptionistScreen.jsp.jsp");
+		 RequestDispatcher includeAction = request.getRequestDispatcher("AddPatient.jsp");
+		 PrintWriter out=response.getWriter();
+		 DaoImp daoimp=new DaoImp();
+		 boolean stauts=daoimp.addPatient(patientbean);
+		 if(stauts)
+		 {
+			 forwardAction.forward(request, response);
+		 }
+		 else
+		 {
+			 out.print("Something went worng ! Please Try Again");
+			 includeAction.include(request, response);
+			 
+		 }
+		 
 			}
 
 	}
