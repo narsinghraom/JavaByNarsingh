@@ -54,6 +54,10 @@ public class LoginServlet extends HttpServlet {
 		String userName = request.getParameter("userName");
 		String password = request.getParameter("password");
 		String userType = request.getParameter("userType");
+		LoginBean loginBean=new LoginBean();
+		loginBean.setUserName(userName);
+		loginBean.setPassword(password);
+		loginBean.setUserType(userType);
 		DaoImp dao = new DaoImp();
 		EmpBean empBean = null;
 		PrintWriter out = response.getWriter();
@@ -63,7 +67,7 @@ public class LoginServlet extends HttpServlet {
 				.getRequestDispatcher("ReceptionistScreen.jsp");
 		RequestDispatcher loginInclude = request
 				.getRequestDispatcher("Login.jsp");
-		empBean = dao.login(userName, password);
+		empBean = dao.login(loginBean);
 		if (empBean != null) {
 			if (empBean.getUsername().equals(userName)) {
 				if (empBean.getPassword().equals(password)) {

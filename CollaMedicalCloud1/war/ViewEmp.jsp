@@ -56,13 +56,14 @@
 										</tr>
 
 										<%
-											DaoImp dao = new DaoImp();
-											List<EmpBean> list = dao.readEmp();
-											Iterator itr = list.iterator();
+											DaoImp dao=new DaoImp();
+																		List<EmpBean> list=dao.readEmp();
+																		Iterator<EmpBean> itr=list.iterator();
 
-											while (itr.hasNext()) {
-												EmpBean empbean = (EmpBean) itr.next();
-												if(empbean!=null){
+																		while(itr.hasNext())
+																		{
+																			EmpBean empbean=(EmpBean)itr.next();
+																			if(empbean!=null){
 										%>
 										<tr>
 											<td><font size="3" color="black"><%=empbean.getUsername()%></font></td>
@@ -73,8 +74,8 @@
 											<td><font size="3" color="black"><%=empbean.getAddress()%></font></td>
 										</tr>
 										<%
-												}
 											}
+																		}
 										%>
 
 									</table>

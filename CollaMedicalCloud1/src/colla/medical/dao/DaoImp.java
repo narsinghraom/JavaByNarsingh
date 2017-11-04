@@ -14,6 +14,8 @@ import colla.medical.bean.PrescriptionBean;
 
 
 
+import colla.medical.logics.ConvertingList;
+
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -39,13 +41,13 @@ public class DaoImp
 		    return todos;
 	  }
 	  
-	  public EmpBean login(String username,String password){
-		  EmpBean empBeam=new EmpBean();
+	  public EmpBean login(LoginBean loginBean){
+		  EmpBean empBeam=null;
 		  EntityManager entity=EMFService.get().createEntityManager();
 		  Query query=entity.createQuery("select e from EmpBean e");
-		  List<EmpBean> listResults = query.getResultList();
-		  
-		  
+		  @SuppressWarnings("unchecked")
+		List<EmpBean> listEmp = query.getResultList();
+		  empBeam=ConvertingList.loginListConvert(loginBean, listEmp);
 		  return empBeam;
 		  
 	  }
@@ -63,20 +65,6 @@ public class DaoImp
 		  return flag;
 	  }
 	  
-	  public boolean login(LoginBean loginbean) {
-		  boolean flag = false;
-		  synchronized (this) {
-	      EntityManager em = EMFService.get().createEntityManager();
-	     
-	      em.persist(loginbean);
-	      em.close();
-	      flag = true;
-	    }
-		  return flag;
-	  }
-	  
-	
-
 public boolean addEmp(EmpBean empbean) {
 		  boolean flag = false;
 		  synchronized (this) {
