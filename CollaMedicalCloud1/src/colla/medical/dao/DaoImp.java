@@ -35,7 +35,7 @@ public class DaoImp
 	  public List<EmpBean> readEmp(){
 		  EntityManager em = EMFService.get().createEntityManager();
 		    // Read the existing entries
-		    Query q = em.createQuery("select m from EmpBean m");
+		    Query q = em.createQuery("select e from EmpBean e");
 		    @SuppressWarnings("unchecked")
 			List<EmpBean> todos = q.getResultList();
 		    return todos;
